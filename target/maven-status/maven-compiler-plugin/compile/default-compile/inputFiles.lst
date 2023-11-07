@@ -1,0 +1,8 @@
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/BankAppSecured1Application.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/model/Customer.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/config/SecurityConfig.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/controller/LoginController.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/service/CustomerService.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/repo/CustomerRepo.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/controller/WelcomeController.java
+/Users/asthamac/Documents/spring-security-projects/Bank-app-v1/src/main/java/com/example/demo/controller/AccountController.java
