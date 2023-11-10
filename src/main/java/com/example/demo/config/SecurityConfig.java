@@ -46,8 +46,8 @@ public class SecurityConfig {
 		   CsrfTokenRequestAttributeHandler requestHandler = new CsrfTokenRequestAttributeHandler();
 	       requestHandler.setCsrfRequestAttributeName("_csrf");
 	        
-	        
-	        http.cors(corsCustomizer -> corsCustomizer.configurationSource(new CorsConfigurationSource() {
+	       http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+	           .cors(corsCustomizer -> corsCustomizer.configurationSource(new CorsConfigurationSource() {
 	             @Override
 	             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 	                CorsConfiguration config = new CorsConfiguration();
