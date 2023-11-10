@@ -1,14 +1,14 @@
 package com.example.demo.repo;
 
-import java.util.List;
-
+import com.example.demo.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Customer;
+import java.util.List;
 
 @Repository
-public interface CustomerRepo extends CrudRepository<Customer, Integer>
-{
-   public List<Customer> findByEmail(String email);
+public interface CustomerRepo extends CrudRepository<Customer, Integer> {
+
+    List<Customer> findByEmail(String email);
+    
 }
