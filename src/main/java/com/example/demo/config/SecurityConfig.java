@@ -19,6 +19,8 @@ import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
+import com.example.demo.filter.JWTTokenGeneratorFilter;
+import com.example.demo.filter.JWTTokenValidatorFilter;
 import com.example.demo.filter.LoggingAfterFilter;
 import com.example.demo.filter.RequestValidationBeforeFilter;
 
@@ -61,8 +63,10 @@ public class SecurityConfig {
 	             }
 	                }))
                 .csrf(csrf -> csrf.disable())
+                .addFilterBefore(new JWTTokenValidatorFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class) // doesn't allow customer with name ending with "test"
                 .addFilterAfter(new LoggingAfterFilter(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new JWTTokenGeneratorFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests()
                 .requestMatchers("/myAccount").hasAuthority("VIEWACCOUNT")           // will be accessible to user having "VIEWACCOUNT" authority
                 .requestMatchers("/myBalance").hasAnyAuthority("VIEWBAL", "ViewBal") // will give 403 not authorized error as we have not configured this authority for any user  
